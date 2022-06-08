@@ -14,17 +14,13 @@ import { HttpClient } from '@angular/common/http';
 
 
 export class PokemonComponent implements OnInit {
-  Pokemons:any;
-  
-  constructor(private http: HttpClient) { }
-
-  ngOnInit(): void {
-    this.http.get<any>('https://pokeapi.co/api/v2/pokemon').subscribe(data => {
-        this.Pokemons = data.results;
-    });
-
+    Pokemons:any;
     
-  }
-  
+    constructor(private http: HttpClient) { }
 
+    ngOnInit(): void {
+        this.http.get<any>('https://pokeapi.co/api/v2/pokemon').subscribe(data => {
+            this.Pokemons = data.results;
+        });
+    }
 }
