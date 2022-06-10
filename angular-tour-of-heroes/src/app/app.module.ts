@@ -9,13 +9,15 @@ import { HeroesComponent } from './heroes/heroes.component';
 import { LuciaComponent } from './lucia/lucia.component';
 import { PokemonComponent } from './pokemon/pokemon.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ListFromInputComponent } from './list-from-input/list-from-input.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         HeroesComponent,
         LuciaComponent,
-        PokemonComponent
+        PokemonComponent,
+        ListFromInputComponent
     ],
     imports: [
         BrowserModule,
