@@ -10,6 +10,9 @@ import { LuciaComponent } from './lucia/lucia.component';
 import { PokemonComponent } from './pokemon/pokemon.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ListFromInputComponent } from './list-from-input/list-from-input.component';
+import { SnapshotComponent } from './snapshot/snapshot.component';
+import { DepartmentListComponent } from './department-list/department-list.component';
+import { DepartmentDetailComponent } from './department-detail/department-detail.component';
 
 @NgModule({
     declarations: [
@@ -17,7 +20,10 @@ import { ListFromInputComponent } from './list-from-input/list-from-input.compon
         HeroesComponent,
         LuciaComponent,
         PokemonComponent,
-        ListFromInputComponent
+        ListFromInputComponent,
+        SnapshotComponent,
+        DepartmentListComponent,
+        DepartmentDetailComponent
     ],
     imports: [
         BrowserModule,

@@ -1,6 +1,6 @@
 <input #element>
 
-<button type="button" (click)="addElement(element.value)">Add</button>
+<button type="button" (click)="addElement(element.value); element.value =''">Add</button>
 
 <ul>
     <li *ngFor="let elem of list">{{elem}}</li>
