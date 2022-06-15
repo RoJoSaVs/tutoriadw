@@ -8,7 +8,7 @@ import { ActivatedRoute } from "@angular/router";
 })
 export class SnapshotComponent implements OnInit {
 
-    teacher:{ sn:string; lecturer: string} = {sn:"0", lecturer:""};
+    teacher:{ sn:string; lecturer: string} = {sn: "", lecturer: ""};
 
     constructor(private route: ActivatedRoute) { }
 
@@ -18,12 +18,4 @@ export class SnapshotComponent implements OnInit {
             lecturer: this.route.snapshot.params['lecturer']
         }
     }
-
-    // ngOnInit(): void {
-    //     this.teacher = {
-    //         sn: this.route.snapshot.params['sn'],
-    //         lecturer: this.route.snapshot.params['lecturer']
-    //     }
-    // }
-
 }

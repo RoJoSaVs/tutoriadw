@@ -15,9 +15,10 @@ const routes: Routes = [
     { path: 'pokemon', component: PokemonComponent },
     { path: "list-input", component: ListFromInputComponent},
     { path: "snapshot", component: SnapshotComponent},
-    {path:'snapshot/:sn/:lecturer', component: SnapshotComponent},
-    { path:'departmentlist', component:DepartmentListComponent },
-    { path:'departmentlist/:id', component:DepartmentDetailComponent },
+    { path: 'snapshot/:sn', component: SnapshotComponent},
+    { path: 'snapshot/:sn/:lecturer', component: SnapshotComponent},
+    { path: 'departmentlist', component:DepartmentListComponent },
+    { path: 'departmentlist/:id', component:DepartmentDetailComponent },
     { path: '', redirectTo: 'heroes', pathMatch: 'full'}
 ];
 

@@ -14,12 +14,14 @@ export class DepartmentDetailComponent implements OnInit {
     constructor(private route: ActivatedRoute ) { }
 
     ngOnInit(): void {
-        let id:any = this.route.snapshot.paramMap.get("id");
-        try {
-            this.departmentId = parseInt(id);
-        } catch (error) {
-            
-        }
+        this.departmentId = parseInt(this.route.snapshot.paramMap.get("id") || "1");
+        
+        // let id:any = this.route.snapshot.paramMap.get("id");
+        // try {
+        //     this.departmentId = parseInt(id);
+        // } catch (error) {
+        //     this.departmentId = 0;
+        // }
     }
 
 }
