@@ -7,6 +7,8 @@ import { ListFromInputComponent } from './list-from-input/list-from-input.compon
 import { SnapshotComponent } from './snapshot/snapshot.component';
 import { DepartmentListComponent } from './department-list/department-list.component';
 import { DepartmentDetailComponent } from './department-detail/department-detail.component';
+import { ServiceTesterComponent } from './service-tester/service-tester.component';
+import { GetPokemonComponent } from './get-pokemon/get-pokemon.component';
 
 
 const routes: Routes = [
@@ -19,6 +21,8 @@ const routes: Routes = [
     { path: 'snapshot/:sn/:lecturer', component: SnapshotComponent},
     { path: 'departmentlist', component:DepartmentListComponent },
     { path: 'departmentlist/:id', component:DepartmentDetailComponent },
+    { path: 'servicetester', component: ServiceTesterComponent },
+    { path: 'getpokemon', component:  GetPokemonComponent},
     { path: '', redirectTo: 'heroes', pathMatch: 'full'}
 ];
 

@@ -14,6 +14,10 @@ import { SnapshotComponent } from './snapshot/snapshot.component';
 import { DepartmentListComponent } from './department-list/department-list.component';
 import { DepartmentDetailComponent } from './department-detail/department-detail.component';
 
+import { CrudService } from './crud.service';
+import { ServiceTesterComponent } from './service-tester/service-tester.component';
+import { GetPokemonComponent } from './get-pokemon/get-pokemon.component';
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -23,7 +27,9 @@ import { DepartmentDetailComponent } from './department-detail/department-detail
         ListFromInputComponent,
         SnapshotComponent,
         DepartmentListComponent,
-        DepartmentDetailComponent
+        DepartmentDetailComponent,
+        ServiceTesterComponent,
+        GetPokemonComponent
     ],
     imports: [
         BrowserModule,
