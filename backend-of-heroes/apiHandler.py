@@ -12,7 +12,7 @@ mongo_database = mongodbHandler.MongodbHandler("MongoDBA-R", "Nodo_R", "Employee
 
 
 # A route to return all of the available entries in our catalog.
-@app.route('/api/employees', methods=['GET'])
+@app.route('/api/get', methods=['GET'])
 def api_all():
     try:
         return jsonify(mongo_database.readAllFromMongoDB())

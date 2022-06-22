@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Project } from './Project';
+import { Test } from './Test';
 import { CrudService } from '../crud.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
     selector: 'app-service-tester',
@@ -9,8 +12,8 @@ import { CrudService } from '../crud.service';
 export class ServiceTesterComponent implements OnInit {
 
     response:any;
-    listPokemon:any;
-    constructor(private crudService:CrudService) { }
+    listPokemon:Test[] = [];
+    constructor(private crudService:CrudService, private http: HttpClient) { }
 
     ngOnInit(): void {
     }
@@ -18,6 +21,14 @@ export class ServiceTesterComponent implements OnInit {
     printPokemon(){
         this.crudService.readElement("1").subscribe(data => {
             console.log(data);
+        });
+    }
+
+    getData(){
+        this.http.get<Test>('http://localhost:5000/api/get').subscribe((data:Test) => {
+            console.log(data);
+            // this.listPokemon = data;
+            // console.log(this.listPokemon);
         });
     }
 

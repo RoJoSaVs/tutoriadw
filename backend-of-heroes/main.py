@@ -1,6 +1,5 @@
 import subprocess
 import sys
-import apiHandler
 
 
 
@@ -17,4 +16,6 @@ install("dnspython")
 install("Flask")
 install("Flask-Cors")
 
-apiHandler.app.run()
+import apiHandler
+if __name__ == "__main__":
+    apiHandler.app.run(host='0.0.0.0', port=5000, debug=True)
