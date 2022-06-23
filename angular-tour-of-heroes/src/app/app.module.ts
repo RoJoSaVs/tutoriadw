@@ -17,6 +17,7 @@ import { DepartmentDetailComponent } from './department-detail/department-detail
 import { CrudService } from './crud.service';
 import { ServiceTesterComponent } from './service-tester/service-tester.component';
 import { GetPokemonComponent } from './get-pokemon/get-pokemon.component';
+import { PostMethodComponent } from './post-method/post-method.component';
 
 @NgModule({
     declarations: [
@@ -29,7 +30,8 @@ import { GetPokemonComponent } from './get-pokemon/get-pokemon.component';
         DepartmentListComponent,
         DepartmentDetailComponent,
         ServiceTesterComponent,
-        GetPokemonComponent
+        GetPokemonComponent,
+        PostMethodComponent
     ],
     imports: [
         BrowserModule,
