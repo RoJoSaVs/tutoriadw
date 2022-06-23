@@ -3,4 +3,5 @@ export interface Project{
     country: string;
     goalPopulation: string;
     duration: number;
+    type: string;
 }

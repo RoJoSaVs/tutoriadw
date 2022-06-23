@@ -7,13 +7,14 @@ import { Observable } from 'rxjs';
 })
 export class CrudService {
 
-    url:string = "https://pokeapi.co/api/v2/pokemon/";
+    // url: string = "https://pokeapi.co/api/v2/pokemon/";
+    url: string = "http://localhost:5000/api/add";
     response:any;
 
     constructor(private httpClient: HttpClient) { }
 
-    createElement(element:any){
-        this.httpClient.post(this.url, element);
+    createElement(element:any): Observable<any>{
+        return this.httpClient.post(this.url, element);
     }
 
 

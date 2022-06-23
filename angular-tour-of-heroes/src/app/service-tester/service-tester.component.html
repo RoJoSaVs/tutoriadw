@@ -1,3 +1,15 @@
 <h2>service-tester works!</h2>
 <button (click)="printPokemon()">Print Pokemon!!!</button>
 <button (click)="getData()">Print Data!!!</button>
+<button (click)="addVolunteer()">Add Data!!!</button>
+<button (click)="addVolunteerService()">Add Data Service!!!</button>
+
+<ol *ngFor="let element of listGet">
+    <ul>
+        <li>{{element.name}}</li>
+        <li>{{element.country}}</li>
+        <li>{{element.goalPopulation}}</li>
+        <li>{{element.duration}}</li>
+    </ul>
+
+</ol>

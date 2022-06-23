@@ -26,12 +26,7 @@ def api_all():
 def add_single_record():
     try:
         data = request.json
-        request_value = data['email']
-        response = mongo_database.readOneFromMongoDB('email', request_value)
-        if (response == None):
-            return jsonify(mongo_database.insertToMongoDB(data))
-        else:
-            return jsonify(-1)
+        return jsonify(mongo_database.insertToMongoDB(data))
     except:
         abort(404)
 
