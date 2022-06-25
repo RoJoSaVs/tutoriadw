@@ -18,6 +18,7 @@ import { CrudService } from './crud.service';
 import { ServiceTesterComponent } from './service-tester/service-tester.component';
 import { GetPokemonComponent } from './get-pokemon/get-pokemon.component';
 import { PostMethodComponent } from './post-method/post-method.component';
+import { FormTestComponent } from './form-test/form-test.component';
 
 @NgModule({
     declarations: [
@@ -31,7 +32,8 @@ import { PostMethodComponent } from './post-method/post-method.component';
         DepartmentDetailComponent,
         ServiceTesterComponent,
         GetPokemonComponent,
-        PostMethodComponent
+        PostMethodComponent,
+        FormTestComponent
     ],
     imports: [
         BrowserModule,

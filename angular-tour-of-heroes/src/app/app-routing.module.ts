@@ -10,6 +10,7 @@ import { DepartmentDetailComponent } from './department-detail/department-detail
 import { ServiceTesterComponent } from './service-tester/service-tester.component';
 import { GetPokemonComponent } from './get-pokemon/get-pokemon.component';
 import { PostMethodComponent } from './post-method/post-method.component';
+import { FormTestComponent } from './form-test/form-test.component';
 
 
 const routes: Routes = [
@@ -25,6 +26,7 @@ const routes: Routes = [
     { path: 'servicetester', component: ServiceTesterComponent },
     { path: 'getpokemon', component:  GetPokemonComponent},
     { path: 'postmethod', component:  PostMethodComponent},
+    { path: 'formtester', component:  FormTestComponent},
     { path: '', redirectTo: 'heroes', pathMatch: 'full'}
 ];
 

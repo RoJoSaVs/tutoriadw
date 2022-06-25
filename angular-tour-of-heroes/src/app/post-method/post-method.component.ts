@@ -15,9 +15,10 @@ export class PostMethodComponent implements OnInit {
     ngOnInit(): void {
     }
 
-    addData(){
-        let volunteer:Volunteer = {name: "josue", age: 22, country: "CR", type: "volunteer"};
-
+    addData(name:string, country:string, age:string){
+        let ageN:number = parseInt(age);
+        let volunteer:Volunteer = {name: name, age: ageN, country: country, type: "volunteer"};
+        // console.log(volunteer);
         this.http.post('https://tutoriadw.ronnysantamaria.repl.co/api/add', volunteer).subscribe(data => {
             console.log(data);
         });

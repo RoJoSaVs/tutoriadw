@@ -1,0 +1,14 @@
+<p>form-test works!</p>
+<h3>Volunteer Name</h3>
+<input type="text" #nameVolunteer>
+
+<h3>Volunteer Age</h3>
+<input type="number" #ageVolunteer>
+
+<h3>Volunteer Country</h3>
+<input type="text" #countryVolunteer>
+<br><br>
+
+<button (click)="getDataForm(nameVolunteer.value, ageVolunteer.value, countryVolunteer.value);
+                nameVolunteer.value = ''; ageVolunteer.value = ''; countryVolunteer.value = '';
+                ">Send Data</button>

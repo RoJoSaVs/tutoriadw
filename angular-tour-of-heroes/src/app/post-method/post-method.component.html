@@ -1,2 +1,18 @@
 <h2>post-method works!</h2>
-<button (click)="addData()">Ver Print</button>
+<br><br>
+
+<h4>Nombre</h4>
+<input type="text" #nameVolunteer>
+<br><br>
+
+<h4>Pais</h4>
+<input type="text" #countryVolunteer>
+<br><br>
+
+<h4>Edad</h4>
+<input type="number" #ageVolunteer>
+
+<br><br>
+<button (click)="addData(nameVolunteer.value, countryVolunteer.value, ageVolunteer.value); 
+                        nameVolunteer.value = ''; ageVolunteer.value = ''; countryVolunteer.value = '';
+                        ">Ver Print</button>
