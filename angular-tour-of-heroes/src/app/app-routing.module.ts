@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HeroesComponent } from './heroes/heroes.component';
-import { LuciaComponent } from './lucia/lucia.component';
 import { PokemonComponent } from './pokemon/pokemon.component';
 import { ListFromInputComponent } from './list-from-input/list-from-input.component';
 import { SnapshotComponent } from './snapshot/snapshot.component';
@@ -11,11 +10,11 @@ import { ServiceTesterComponent } from './service-tester/service-tester.componen
 import { GetPokemonComponent } from './get-pokemon/get-pokemon.component';
 import { PostMethodComponent } from './post-method/post-method.component';
 import { FormTestComponent } from './form-test/form-test.component';
+import { FormNgModelComponent } from './form-ng-model/form-ng-model.component';
 
 
 const routes: Routes = [
     { path: 'heroes', component: HeroesComponent },
-    { path: 'lucia', component: LuciaComponent },
     { path: 'pokemon', component: PokemonComponent },
     { path: "list-input", component: ListFromInputComponent},
     { path: "snapshot", component: SnapshotComponent},
@@ -27,6 +26,7 @@ const routes: Routes = [
     { path: 'getpokemon', component:  GetPokemonComponent},
     { path: 'postmethod', component:  PostMethodComponent},
     { path: 'formtester', component:  FormTestComponent},
+    { path: 'formngmodel', component: FormNgModelComponent},
     { path: '', redirectTo: 'heroes', pathMatch: 'full'}
 ];
 

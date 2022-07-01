@@ -1,0 +1,36 @@
+<p>form-ng-model works!</p>
+
+<h2>Interfaz</h2>
+<h3>Nombre</h3>
+<input type="text" [(ngModel)]="personaInterface.name">
+
+<h3>Edad</h3>
+<input type="number" [(ngModel)]="personaInterface.age">
+
+<h3>Id</h3>
+<input type="text" [(ngModel)]="personaInterface.id">
+
+<h3>Direccion</h3>
+<input type="text" [(ngModel)]="personaInterface.address">
+
+<button (click)="showInterface()">Show Interface</button>
+
+<h2>///////////////////////////////////////////////////////</h2>
+
+<h2>Clase</h2>
+<h3>Nombre</h3>
+<input type="text" [(ngModel)]="personaClass.name">
+
+<h3>Edad</h3>
+<input type="number" [(ngModel)]="personaClass.age">
+
+<h3>Id</h3>
+<input type="text" [(ngModel)]="personaClass.id">
+
+<h3>Direccion</h3>
+<input type="text" [(ngModel)]="personaClass.address">
+
+<button (click)="showClass()">Show Class</button>
+
+<br><br>
+<h3 (click)="getMethodService()">Show Request</h3>

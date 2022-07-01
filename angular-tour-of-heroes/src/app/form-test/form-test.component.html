@@ -1,14 +1,27 @@
-<p>form-test works!</p>
+<h1>Form with Interface</h1>
 <h3>Volunteer Name</h3>
-<input type="text" #nameVolunteer>
+<input type="text" #nameVolunteer [(ngModel)]="volunteer.name">
 
 <h3>Volunteer Age</h3>
-<input type="number" #ageVolunteer>
+<input type="number" #ageVolunteer [(ngModel)]="volunteer.age">
 
 <h3>Volunteer Country</h3>
-<input type="text" #countryVolunteer>
+<input type="text" #countryVolunteer [(ngModel)]="volunteer.country">
 <br><br>
 
 <button (click)="getDataForm(nameVolunteer.value, ageVolunteer.value, countryVolunteer.value);
                 nameVolunteer.value = ''; ageVolunteer.value = ''; countryVolunteer.value = '';
                 ">Send Data</button>
+
+
+<h1>Form with Class</h1>
+<h3>Volunteer Name</h3>
+<input type="text" #nameVolunteerClass [(ngModel)]="volunteerClass.name">
+
+<h3>Volunteer Age</h3>
+<input type="number" #ageVolunteerClass [(ngModel)]="volunteerClass.age">
+
+<h3>Volunteer Country</h3>
+<input type="text" #countryVolunteerClass [(ngModel)]="volunteerClass.country">
+<br><br>
+<button (click)="printVolunteer()">Print Volunteer</button>
