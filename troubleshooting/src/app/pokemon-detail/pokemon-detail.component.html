@@ -1,0 +1,19 @@
+<h1>{{pokemon.name.toUpperCase()}}</h1>
+<div>
+    <h2>Types: </h2>
+    <h4 *ngFor="let poke of pokemon.types" style="display:inline-block;">{{poke.type.name}} &nbsp;</h4>
+</div>
+<img src={{pokemon.sprites.front_default}} width="25%">
+<img src={{pokemon.sprites.back_default}} width="25%">
+<img src={{pokemon.sprites.front_shiny}} width="25%">
+<img src={{pokemon.sprites.back_shiny}} width="25%">
+
+<h4>Abilities: </h4>
+<ul>
+    <li *ngFor="let ability of pokemon.abilities">{{ability.ability.name}}</li>
+</ul>
+
+<h4>Moves: </h4>
+<ol>
+    <li *ngFor="let move of pokemon.moves">{{move.move.name}}</li>
+</ol>

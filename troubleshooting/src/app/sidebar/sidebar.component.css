@@ -1,0 +1,16 @@
+.full-height {
+    height: 89.5%;
+}
+
+.padded {
+    padding: 10px;
+}
+
+.with-icon {
+    display: flex;
+    align-items: center;
+}
+
+span {
+    cursor: pointer;
+}

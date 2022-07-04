@@ -1,0 +1,23 @@
+<form #taskForm="ngForm" (ngSubmit)="addToList(); taskForm.reset()">
+    Task Name: <input type="text" [(ngModel)]="task.name" name="taskName" class="form-control" required> <br>
+    Task Description: <input type="text" [(ngModel)]="task.description" name="taskDescription" class="form-control"> <br>
+    Task Due Date: <input type="date" [(ngModel)]="task.dueDate" name="taskDueDate" required> <br><br>
+    <button class="btn btn-success btn-md">Add Task</button>
+</form>
+<br><br>
+
+<div>
+    <table class="table table-bordered table-dark">
+        <thead>
+            <tr id="tableName"> <th colspan="3"> Task Details </th> </tr>
+        </thead>
+        <tbody>
+            <tr class="headElement"><td class="nameTask">Name</td> <td class="descriptionTask">Description</td> <td class="dateTask">Due Date</td></tr>
+            <tr *ngFor="let task of this.taskList" class="taskRow" (click)="showTask(task)">
+                <td class="nameTask">{{task.name}}</td>
+                <td class="descriptionTask">{{task.description}}</td>
+                <td class="dateTask">{{task.dueDate}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
