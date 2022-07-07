@@ -24,12 +24,21 @@
                     <tr> <th colspan="2"> Weather Details </th> </tr>
                 </thead>
 
-                <tbody>
+                <tbody *ngIf="this.isData" >
+                <!-- <tbody> -->
                     <tr><td>Current weather description:</td> <td>{{ this.weatherData.current.weather_descriptions[0] }}</td></tr>
                     <tr><td>Temperature in Degrees Celsius:</td> <td>{{ this.weatherData.current.temperature }}</td></tr>
                     <tr><td>Feels like in Degrees Celsius:</td> <td>{{ this.weatherData.current.feelslike }}</td></tr>
                     <tr><td>Location Searched:</td> <td>{{ this.weatherData.location.name }}, {{ this.weatherData.location.country }}</td></tr>
                     <tr><td>Observation Time:</td> <td>{{this.weatherData.current.observation_time}}</td></tr>
+                </tbody>
+
+                <tbody *ngIf="!this.isData" >
+                    <tr><td>Current weather description:</td> <td> </td></tr>
+                    <tr><td>Temperature in Degrees Celsius:</td> <td> </td></tr>
+                    <tr><td>Feels like in Degrees Celsius:</td> <td> </td></tr>
+                    <tr><td>Location Searched:</td> <td></td></tr>
+                    <tr><td>Observation Time:</td> <td> </td></tr>
                 </tbody>
 
 

@@ -15,41 +15,44 @@ export class DashboardComponent implements OnInit {
     lineChartColors: Color[] = [{borderColor: 'black', backgroundColor: 'rgba(0, 177, 56, 0.7)',},];
     lineChartLegend = true;
     lineChartType:ChartType = 'line';
-        d:any = false;
+    
+    // This performs the thing that shows or hide table content
+    // d:any = false;
 
     constructor() { }
 
     ngOnInit(): void { 
-        this.d = this.x();
+        // this.d = this.x();// This performs the thing that shows or hide table content
     }
 
-    x():boolean{
-        let d:any = new Date();
-        let n = 0;
-        let list:any= [];
-        d = d.getMinutes();
-        while(n < 100){
-            n-=1;
-            if(n == 50){
-                list[list.length] = d;
-            }
-            n+=2;
-        }
-        if(this.y(list[0])){
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
+    // This performs the thing that shows or hide table content
+    // x():boolean{
+    //     let d:any = new Date();
+    //     let n = 0;
+    //     let list:any= [];
+    //     d = d.getMinutes();
+    //     while(n < 100){
+    //         n-=1;
+    //         if(n == 50){
+    //             list[list.length] = d;
+    //         }
+    //         n+=2;
+    //     }
+    //     if(this.y(list[0])){
+    //         return true;
+    //     }
+    //     else{
+    //         return false;
+    //     }
+    // }
 
-    y(d:any):boolean{
-        if(d % 2 == 0){
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
+    // y(d:any):boolean{
+    //     if(d % 2 == 0){
+    //         return true;
+    //     }
+    //     else{
+    //         return false;
+    //     }
+    // }
 
 }

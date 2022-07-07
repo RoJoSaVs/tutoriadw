@@ -21,8 +21,17 @@ export class TasksComponent implements OnInit {
         console.log(task);
     }
 
-    addToList():void{
-        this.taskList.push(this.task);
-    }
+    // addToList():void{
+    //     this.taskList.push(this.task);
+    // }
 
+    addToList(taskForm:NgForm):void{
+        if(taskForm.valid){
+            let task:ITask = {name:taskForm.value.taskName, description:taskForm.value.taskDescription, dueDate:taskForm.value.taskDueDate};
+            this.taskList.push(task);
+        }
+        else{
+            alert("Task must have at least date and name");
+        }
+    }
 }

@@ -10,7 +10,8 @@ export class MenuList {
 export const menuListInstances = [
     new MenuList('Pokemon', 'pokemon', 'Pokemon', 'catching_pokemon'),
     new MenuList('Weather', 'weather', 'Weather', 'cloud'),
-    new MenuList('Video', 'viedo', 'Video', 'video_library'),
+    // new MenuList('Video', 'viedo', 'Video', 'video_library'),
+    new MenuList('Video', 'video', 'Video', 'video_library'),
     new MenuList('Tasks', 'task', 'Tasks', 'task'),
     new MenuList('Canvas', 'canvas', 'Canvas', 'draw'),
     new MenuList('Dasboard', 'dashboard', 'Dasboard', 'dashboard'),

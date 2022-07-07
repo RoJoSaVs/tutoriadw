@@ -1,4 +1,5 @@
-<form #taskForm="ngForm" (ngSubmit)="addToList(); taskForm.reset()">
+<form #taskForm="ngForm" (ngSubmit)="addToList(taskForm); taskForm.reset()">
+<!-- <form #taskForm="ngForm" (ngSubmit)="addToList(); taskForm.reset()"> -->
     Task Name: <input type="text" [(ngModel)]="task.name" name="taskName" class="form-control" required> <br>
     Task Description: <input type="text" [(ngModel)]="task.description" name="taskDescription" class="form-control"> <br>
     Task Due Date: <input type="date" [(ngModel)]="task.dueDate" name="taskDueDate" required> <br><br>
@@ -21,3 +22,6 @@
         </tbody>
     </table>
 </div>
+
+
+

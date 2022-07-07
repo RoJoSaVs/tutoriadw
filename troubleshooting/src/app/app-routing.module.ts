@@ -14,7 +14,7 @@ import { CanvasComponent } from './canvas/canvas.component';
 const routes: Routes = [
     { path: "", component: HomeComponent},
     { path: "pokemon", component: PokemonDexComponent},
-    { path: "pokemon/:pokename", component: PokemonDetailComponent},
+    { path: "pokemon/:pokeName", component: PokemonDetailComponent},
     { path: "weather", component: WeatherComponent },
     { path: "video", component: VideoComponent},
     { path: "task", component: TasksComponent},

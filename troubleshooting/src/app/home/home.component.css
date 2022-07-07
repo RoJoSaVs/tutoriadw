@@ -25,8 +25,9 @@ strong {
 }
 
 #hero-image {
+    height: 100%;
     padding-top: 1px;
-    background: #e8eced url('home.png') no-repeat center;
+    background: #e8eced url('home.png') center;
 
 }
 #hero-image h2 {

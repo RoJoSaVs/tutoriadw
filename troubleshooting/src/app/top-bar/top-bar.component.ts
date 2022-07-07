@@ -25,7 +25,8 @@ export class TopBarComponent implements OnInit{
     
 @Component({
     selector: 'dialog-info',
-    template: `<button (click)="closeDialog()">Not Working</button>`
+    templateUrl: 'dialog-info.html'
+    // template: `<button (click)="closeDialog()">Not Working</button>`
 })
 export class DialogContentExampleDialog {
 
