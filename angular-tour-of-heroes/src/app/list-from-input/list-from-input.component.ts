@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Tarea } from './Tarea';
 
 
 @Component({
@@ -9,6 +10,9 @@ import { Component, OnInit } from '@angular/core';
 
 export class ListFromInputComponent implements OnInit {
     list:string[] = [];
+    dateString: string = "2022-07-07";
+    tarea:Tarea = new Tarea("asd", new Date(this.dateString + "T00:00:00-0600"));
+    // tarea:Tarea = new Tarea("asd", new Date(this.dateString + "T00:00:00-0600"));
 
     constructor() { }
 
@@ -20,4 +24,7 @@ export class ListFromInputComponent implements OnInit {
         }
     }
 
+    setDate(){
+        this.tarea.date = new Date(this.dateString + "T00:00:00-0600");
+    }
 }

@@ -5,3 +5,7 @@
 <ul>
     <li *ngFor="let elem of list">{{elem}}</li>
 </ul>
+
+<input type="date" [(ngModel)]="this.dateString" (change)="setDate()">
+<p>{{tarea.date.toDateString()}}</p>
+<!-- <button (click)="setDate()"> Click</button> -->
