@@ -7,7 +7,7 @@ import sys
 
 app = flask.Flask(__name__)
 CORS(app, support_credentials=True)
-mongo_database = mongodbHandler.MongodbHandler("MongoDBA-R", "Nodo_R", "Employees")
+mongo_database = mongodbHandler.MongodbHandler("MongoDBA-R", "Nodo_R", "tutoriadw")
 
 
 
@@ -20,6 +20,14 @@ def api_all():
         abort(404)
 
 
+@app.route('/api/get_single', methods=['GET'])
+def api_single_record():
+    try:
+        request_param = list(request.args.keys())[0]
+        request_value = request.args.get(request_param)
+        return jsonify(mongo_database.readOneFromMongoDB(request_param, request_value))
+    except:
+        abort(404)
 
 
 @app.route('/api/add', methods=['POST'])
