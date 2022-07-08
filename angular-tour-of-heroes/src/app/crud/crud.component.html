@@ -1,0 +1,9 @@
+<input type="text" #pokemonName placeholder="Pokemon Name">
+<input type="text" #pokemonUrl placeholder="Pokemon Url">
+<button (click)="getData()">Get Data</button>
+<button (click)="getSingle(pokemonName.value)">Get Single Data</button>
+<button (click)="postData(pokemonName.value, pokemonUrl.value)">Post Data</button>
+<button (click)="delete(pokemonName.value)">Delete Single Data</button>
+<button (click)="putData(pokemonName.value, pokemonUrl.value)">Put Data</button>
+
+

@@ -20,7 +20,7 @@ export class ServiceTesterComponent implements OnInit {
     }
 
     printPokemon(){
-        this.crudService.readElement("1").subscribe(data => {
+        this.crudService.readElement("https://pokeapi.co/api/v2/pokemon/", "1").subscribe(data => {
             console.log(data);
         });
     }
@@ -44,7 +44,7 @@ export class ServiceTesterComponent implements OnInit {
 
     addVolunteerService(){
         let volunteer:Volunteer = {name: "ronny", age: 22, country: "Costa Rica", type: "volunteer"};
-        this.crudService.createElement(volunteer).subscribe(data => {
+        this.crudService.createElement("http://localhost:5000/api/add", volunteer).subscribe(data => {
             console.log(data);
         })
     }

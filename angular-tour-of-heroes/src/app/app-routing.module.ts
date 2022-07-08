@@ -11,6 +11,8 @@ import { GetPokemonComponent } from './get-pokemon/get-pokemon.component';
 import { PostMethodComponent } from './post-method/post-method.component';
 import { FormTestComponent } from './form-test/form-test.component';
 import { FormNgModelComponent } from './form-ng-model/form-ng-model.component';
+import { FullCrudComponent } from './full-crud/full-crud.component';
+import { CrudComponent } from './crud/crud.component';
 
 
 const routes: Routes = [
@@ -23,10 +25,12 @@ const routes: Routes = [
     { path: 'departmentlist', component:DepartmentListComponent },
     { path: 'departmentlist/:id', component:DepartmentDetailComponent },
     { path: 'servicetester', component: ServiceTesterComponent },
-    { path: 'getpokemon', component:  GetPokemonComponent},
-    { path: 'postmethod', component:  PostMethodComponent},
-    { path: 'formtester', component:  FormTestComponent},
+    { path: 'getpokemon', component: GetPokemonComponent},
+    { path: 'postmethod', component: PostMethodComponent},
+    { path: 'formtester', component: FormTestComponent},
     { path: 'formngmodel', component: FormNgModelComponent},
+    { path: 'fullcrud', component:FullCrudComponent},
+    { path: 'crud', component: CrudComponent},
     { path: '', redirectTo: 'heroes', pathMatch: 'full'}
 ];
 

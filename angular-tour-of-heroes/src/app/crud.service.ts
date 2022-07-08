@@ -13,20 +13,24 @@ export class CrudService {
 
     constructor(private httpClient: HttpClient) { }
 
-    createElement(element:any): Observable<any>{
-        return this.httpClient.post(this.url, element);
+    createElement(url:string, element:any): Observable<any>{
+        return this.httpClient.post(url, element);
     }
 
 
-    readElement(elementId:string): Observable<any>{
-        return this.httpClient.get<any>(this.url + elementId);
+    readElement(url:string, elementId:string = ""): Observable<any>{
+        return this.httpClient.get<any>(url + elementId);
     }
 
-    updateElement(elementId:any, element:any){
-        this.httpClient.put(this.url + elementId, element);
+    getSingle(url:string, paramGet:string, paramVal:any): Observable<any>{
+        return this.httpClient.get<any>(url + "?" + paramGet + "=" + paramVal);
     }
 
-    deleteElement(elementId:any){
-        this.httpClient.delete(this.url + elementId);
+    updateElement(url:string, paramGet:string, paramVal:any, element:any): Observable<any>{
+        return this.httpClient.put(url + "?" + paramGet + "=" + paramVal, element);
+    }
+
+    deleteElement(url:string, paramGet:string, paramVal:any): Observable<any>{
+        return this.httpClient.delete(url + "?" + paramGet + "=" + paramVal);
     }
 }

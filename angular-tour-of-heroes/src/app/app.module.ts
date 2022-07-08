@@ -18,6 +18,8 @@ import { GetPokemonComponent } from './get-pokemon/get-pokemon.component';
 import { PostMethodComponent } from './post-method/post-method.component';
 import { FormTestComponent } from './form-test/form-test.component';
 import { FormNgModelComponent } from './form-ng-model/form-ng-model.component';
+import { FullCrudComponent } from './full-crud/full-crud.component';
+import { CrudComponent } from './crud/crud.component';
 
 @NgModule({
     declarations: [
@@ -32,7 +34,9 @@ import { FormNgModelComponent } from './form-ng-model/form-ng-model.component';
         GetPokemonComponent,
         PostMethodComponent,
         FormTestComponent,
-        FormNgModelComponent
+        FormNgModelComponent,
+        FullCrudComponent,
+        CrudComponent
     ],
     imports: [
         BrowserModule,
