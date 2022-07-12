@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS Tarea(
     estado VARCHAR(30),
     posicion INT,
     datosContacto TEXT,
-    categoriaLista INT
+    categoriaLista INT --STRING
 );
 /*------------------------------------------------------------------------*/
 /* Modificaciones para establecer las llaves foraneas de las tareas       */

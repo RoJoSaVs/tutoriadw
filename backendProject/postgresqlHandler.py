@@ -24,6 +24,43 @@ class PostgresqlHandler:
 			return []
 
 
+	# Add a new List to database
+	# def addList(self, listToAdd):
+	def addList(self, listToAddName, listToAddUserToken):
+		try:
+			insertQuery = "INSERT INTO Lista (nombre, listaUsuario) VALUES ('%s', '%s')" %(listToAddName, listToAddUserToken)
+			self.cursor.execute(insertQuery)
+			self.connection.commit()
+			return True
+
+		except:
+			return False
+
+
+	# Edit a List attribute based on it's id
+	def editList(self, nameList, listId):
+		try:
+			editListQuery = "UPDATE Lista SET nombre = '%s' WHERE _id = '%s'" %(nameList, listId)
+			self.cursor.execute(editListQuery)
+			self.connection.commit()
+			return True
+		except:
+			return False
+
+
+	# Delete a List by id always that this doesn't have a Task related
+	def deleteList(self, listId):
+		try:
+			deleteListQuery = "DELETE FROM Lista WHERE _id = %s" %(listId)
+			self.cursor.execute(deleteListQuery)
+			self.connection.commit()
+			return True
+
+		except:
+			return False
+
+
+
 
 	# Get all tasks related to a list
 	def getTaskForList(self, listId):
@@ -61,71 +98,23 @@ class PostgresqlHandler:
 			return []
 
 
-
-	# Add a new List to database
-	# def addList(self, listToAdd):
-	def addList(self, listToAddName, listToAddUserToken):
+	# Add a new Task to a list
+	def addTaskToList(self, taskToAdd):
 		try:
-			insertQuery = "INSERT INTO Lista (nombre, listaUsuario) VALUES ('%s', '%s')" %(listToAddName, listToAddUserToken)
+			insertQuery = "INSERT INTO Tarea (nombre, descripcion, urgenciaString, urgenciaNumber, fechaVencimiento, estado, posicion, datosContacto, categoriaLista) VALUES %s"%(taskToAdd)
 			self.cursor.execute(insertQuery)
 			self.connection.commit()
+			print(taskToAdd)
 			return True
 
 		except:
 			return False
-
-
-
-	# Add a new Task to a list
-	# def addTaskToList(self, taskToAdd):
-	#	try:
-	# 		insertQuery = "INSERT INTO Tarea (nombre, descripcion, urgenciaString, urgenciaNumber, fechaVencimiento, estado, posicion, datosContacto, categoriaLista) VALUES"
-	# 		recordsToInsert = taskToAdd
-	# 		self.cursor.execute(insertQuery, recordsToInsert)
-	# 		self.connection.commit()
-	# 		print(taskToAdd)
-
-	# 	except:
-	# 		return []
-
-
-
-	# Edit a List attribute based on it's id
-	def editList(self, nameList, listId):
-		try:
-			editListQuery = "UPDATE Lista SET nombre = '%s' WHERE _id = '%s'" %(nameList, listId)
-			self.cursor.execute(editListQuery)
-			self.connection.commit()
-			return True
-		except:
-			return False
-
 
 
 	# Edit a Task attributte based on it's id
-	def editTask(self, attributesToUpdate, valuesToUpdate, taskId):
+	def editTask(self, updateString, taskId):
 		try:
-			editTaskQuery = "UPDATE Tarea SET "
-			updateValuesString = ""
-
-			if(isinstance(attributesToUpdate, list) and isinstance(valuesToUpdate, list)):
-				if(len(attributesToUpdate) == len(valuesToUpdate)):
-
-					for index in range(0, len(attributesToUpdate)):
-						if(isinstance(valuesToUpdate[index], str)):
-							valuesToUpdate[index] = "'" + valuesToUpdate[index] + "'"
-
-						if(index == (len(attributesToUpdate) - 1)):
-							updateValuesString = updateValuesString + attributesToUpdate[index] + " = " + str(valuesToUpdate[index])
-						else:
-							updateValuesString = updateValuesString + attributesToUpdate[index] + " = " + str(valuesToUpdate[index]) + ", "
-
-			else:
-				if(isinstance(valuesToUpdate, str)):
-					valuesToUpdate = "'" + valuesToUpdate + "'"
-				updateValuesString = attributesToUpdate + " = " + str(valuesToUpdate)
-			
-			editTaskQuery = editTaskQuery + updateValuesString + " WHERE _id = %s;" %(taskId)
+			editTaskQuery = "UPDATE Tarea SET %s WHERE _id = %s;"%(updateString, taskId)
 			self.cursor.execute(editTaskQuery)
 			self.connection.commit()
 			return True
@@ -134,20 +123,8 @@ class PostgresqlHandler:
 			return False
 
 
-	# Delete a List by id always that this doesn't have a Task related
-	def deleteList(self, listId):
-		try:
-			deleteListQuery = "DELETE FROM Lista WHERE _id = %s" %(listId)
-			self.cursor.execute(deleteListQuery)
-			self.connection.commit()
-			return True
-
-		except:
-			return False
-
-
 	# Delete a Task by id
-	def deleteList(self, taskId):
+	def deleteTask(self, taskId):
 		try:
 			deleteTaskQuery = "DELETE FROM Tarea WHERE _id = %s" %(taskId)
 			self.cursor.execute(deleteTaskQuery)
