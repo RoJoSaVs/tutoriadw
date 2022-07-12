@@ -7,7 +7,7 @@ import sys
 
 app = flask.Flask(__name__)
 CORS(app, support_credentials=True)
-mongo_database = mongodbHandler.MongodbHandler("MongoDBA-R", "Nodo_R", "tutoriadw")
+mongo_database = mongodbHandler.MongodbHandler("MongoDBA-R", "Nodo_R", "proyecto")
 
 
 
@@ -34,7 +34,8 @@ def api_single_record():
 def add_single_record():
     try:
         data = request.json
-        return jsonify(mongo_database.insertToMongoDB(data))
+        # return jsonify(mongo_database.insertToMongoDB(data))
+        return jsonify(mongo_database.updateOneToMongoDB(data))
     except:
         abort(404)
 
@@ -63,7 +64,7 @@ def delete_single_record():
 
 
 
-# if __name__ == "__main__":
-#     app.run(host='0.0.0.0', port=5000, debug=True)
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', port=5000, debug=True)
 
 # app.run()

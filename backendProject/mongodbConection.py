@@ -27,7 +27,7 @@ class MongodbHandler:
 	# GET THE FIRST RECORD THAT MATCH WITH CONDITION
 	def readOneFromMongoDB(self, filter_attrib, value_attrib):
 		try:
-			result = self.collection.find_one({filter_attrib: value_attrib}, {'_id': False})
+			result = self.collection.find_one({filter_attrib: value_attrib})#, {'_id': False})
 			return result
 		except Exception:
 			print("* Unable to connect to server.")
@@ -67,23 +67,6 @@ class MongodbHandler:
 			print("* Unable to connect to server.")
 			return None
 
-	def updateOneToMongoDB(self, task):
-		# try:
-			self.collection.update_one({"userId":"testUserId",
-										"listas":
-										[
-											{
-												"idLista":"lista1",
-												"nombreLista":"asasdasdasd",
-												"$push":{"tareas":task}
-											}
-										]
-									})
-			
-
-		# except:
-		# 	return None
-
 
 	# DELETE ONE RECORD THAT MATCH A CONDITION
 	def deleteToMongoDB(self, delete_attribute, delete_value):
@@ -104,17 +87,6 @@ class MongodbHandler:
 # DATABASE = "Nodo_R"
 # COLLECTION = "Employees"
 # connection_str = "mongodb+srv://MongoBDA-R:"+PASSWORD+"@proyecto1bda-nodor.yfva8.mongodb.net/Nodo_R"
-mongo_database = MongodbHandler("MongoDBA-R", "Nodo_R", "proyecto")
+# mongo_database = MongodbHandler("MongoDBA-R", "Nodo_R", "proyecto")
 # print(mongo_database.readAllFromMongoDB())
-print(mongo_database.updateOneToMongoDB({
-  "idtarea": "tarea9",
-  "nombre": "main2",
-  "descripcion": "descripcion2",
-  "urgenciaString": "Urgente",
-  "urgenciaNumber": 1,
-  "fechaVencimiento": "2022-07-21",
-  "estado": "Terminada",
-  "posicion": 1,
-  "datosContacto": "datos de contacto"
-}))
 
