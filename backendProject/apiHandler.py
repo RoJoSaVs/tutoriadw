@@ -47,12 +47,19 @@ def deleteList(param):
 
 
 # Task
+@app.route('/get/task/list/<param>', methods=['GET'])
+def getTaskFromList(param):
+	_id = request.args.get('_id')
+	# print(_id, file=sys.stderr)
+	response = formatResponse(handler.getTaskForList(_id))
+	return response
+
+
 @app.route('/get/task/<param>', methods=['GET'])
 def getTask(param):
     # print(param, file=sys.stderr)
     response = formatResponse(handler.getTaskForUser(param))
     return response
-
 
 
 @app.route('/add/task/<param>', methods=['POST'])
