@@ -1,0 +1,12 @@
+<div class="form">
+    <input class="form-control" type="text" placeholder="Add a task name" [(ngModel)]="task.nombre" />
+    <input class="form-control" type="text" placeholder="Add a task description" [(ngModel)]="task.descripcion" />
+    <input class="form-control" type="text" placeholder="Add a task priority" [(ngModel)]="task.urgenciaString" />
+    <input class="form-control" type="text" placeholder="Add a task status" [(ngModel)]="task.estado" />
+    <input class="form-control" type="date" placeholder="Add a task due date" [(ngModel)]="task.fechaVencimiento" />
+
+    
+    <br><mat-divider></mat-divider><br>
+    <button mat-raised-button (click)="updateTaskToDataBase()"> Update Task</button>
+    <button mat-raised-button (click)="deleteTask()"> Delete Task</button>
+</div>

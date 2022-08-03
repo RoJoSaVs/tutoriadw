@@ -1,0 +1,53 @@
+<section id="title">
+    <button mat-raised-button (click)="open(content)">Add List <span class="material-icons">addchart</span></button>
+</section>
+
+<br><mat-divider></mat-divider><br>
+
+<section id="mainContainer">
+    <section id="right">
+        <mat-card class="example-card" *ngFor="let list of lists" (click)="loadTaskList(list)">
+            <mat-card-title-group>
+                <mat-card-title>{{list.nombreLista}}</mat-card-title>
+            </mat-card-title-group>
+            <button mat-icon-button (click)="deleteList(list)"><mat-icon>delete</mat-icon></button>
+        </mat-card>
+    </section>
+
+
+    <section id="left">
+        <h3 class="animate-charcter">
+            Tasks
+        </h3>
+        <app-task-list  [listId]="idSelected"></app-task-list>
+    </section>
+</section>
+
+
+<!-- ###################################### ADD LIST ###################################### -->
+<div>
+    <ng-template #content let-modal>
+        <div class="modal-header">
+            <h4 class="modal-title">Add List</h4>
+            <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+        </div>
+        <div class="modal-body">
+            <form class="example-form">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label >New List Name</mat-label>
+                    <input matInput #listName maxlength="30" placeholder="Ex. todo list">
+                    <mat-hint align="start"><strong><span class="material-icons">sports_kabaddi</span></strong> </mat-hint>
+                    <mat-hint align="end">{{listName.value.length}} / 30</mat-hint>
+                </mat-form-field>
+            </form>
+            <!-- <p>One fine body&hellip;</p> -->
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+            <button type="button" class="btn btn-light" (click)="addList(listName.value); modal.close('Close click')">Add</button>
+        </div>
+    </ng-template>
+</div>
+
+<!-- ###################################### ALERT ###################################### -->
+<ngb-alert type="danger" *ngIf="showAlert"><strong>Danger!</strong> A new List must have a name</ngb-alert>

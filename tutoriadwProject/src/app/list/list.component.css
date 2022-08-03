@@ -1,0 +1,93 @@
+.example-card {
+    max-width: 400px;
+    margin-bottom: 8px;
+    align-content: center;
+}
+
+.example-card:hover{
+    background-color: #9E9E9E;
+}
+
+.inline-block {
+    display: inline-block;
+    width: 32%;
+    margin: 0.5%;
+    height: 80vh;
+    background-color: #009688;
+}
+
+.mat-raised-button{
+    background-color: #0277BD;
+    font-size: large;
+}
+
+#title{
+    display: flex;
+    justify-content: space-between;
+}
+
+#mainContainer{
+    display: flex;
+    justify-content: space-between;
+}
+
+#right{
+    width: 38%;
+}
+
+#left{
+    width: 60%;
+}
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    color: #FFFFFF;
+}
+  
+.example-full-width {
+    width: 100%;
+}
+
+.ng-template{
+    background-color: #37474F;
+    color: #37474F;
+}
+
+
+.dark-modal .modal-content {
+    background-color: #292b2c;
+    color: white;
+}
+
+.dark-modal .close {
+    color: white;
+}
+
+.light-blue-backdrop {
+    background-color: #5cb3fd;
+}
+
+/* Text Style */
+.animate-charcter
+{
+    text-transform: uppercase;
+    background-image: linear-gradient( -225deg, #fcff2f 0%, #3dff02 29%, #00fff2 67%, #0084ff 100%);
+    /* background-size: auto auto; */
+    background-clip: border-box;
+    /* background-size: 200% auto; */
+    color: #fff;
+    /* background-clip: text; */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 2s linear infinite;
+    display: inline-block;
+    font-size: bold;
+}
+
+@keyframes textclip {
+    to {
+        background-position: 200% center;
+    }
+}

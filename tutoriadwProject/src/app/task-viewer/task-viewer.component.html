@@ -1,0 +1,33 @@
+<section id="title">
+    <button mat-raised-button (click)="addTask()">Add New Task <span class="material-icons">add_task</span></button>
+</section>
+
+<br><mat-divider></mat-divider><br>
+
+<table mat-table [dataSource]="tasks" matSort>
+
+    <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef> <h2>Name</h2> </th>
+        <td mat-cell *matCellDef="let task">{{task.nombre.toUpperCase()}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="descripcion">
+        <th mat-header-cell *matHeaderCellDef> <h2>Description</h2> </th>
+        <td mat-cell *matCellDef="let task">{{task.descripcion}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="fechaVencimiento">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> <h2>Due Date</h2> </th>
+        <td mat-cell *matCellDef="let task">{{task.fechaVencimiento}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="estado">
+        <th mat-header-cell *matHeaderCellDef> <h2>Status</h2> </th>
+        <td mat-cell *matCellDef="let task">{{task.estado}}</td>
+    </ng-container>
+
+
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+    <tr mat-row *matRowDef="let rowData; columns: columnsToDisplay" (click)="onTaskSelected(rowData)"></tr>
+
+</table>

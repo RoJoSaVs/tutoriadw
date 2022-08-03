@@ -1,0 +1,72 @@
+<!-- REACTIVE FORM -->
+<!-- <form [formGroup]="addTaskForm" (ngSubmit)="onSubmit()">
+    <label>Nombre: </label><input type="text" #taskName formControlName="taskName"> <br>
+    <label>Description: </label><input type="text" #taskDescription formControlName="taskDescription"> <br>
+    <label>Priority: </label> <input type="text" #urgenciaString formControlName="urgenciaString"> <br>
+    <label>Date: </label> <input type="date" #taskFechaVencimiento formControlName="taskFechaVencimiento"> <br>
+    <input type="submit" value="Submit" id="btn">
+</form> -->
+
+
+<!-- NG MODEL FORM -->
+<!-- <form #form="ngForm" (ngSubmit)="onSubmit(); noSpaceAllowedNgModel()">
+    <label>Nombre: </label><input type="text" #taskName [(ngModel)]="addTaskNgModel.taskName" name="taskName"> <br>
+    <label>Description: </label><input type="text" #taskDescription [(ngModel)]="addTaskNgModel.taskDescription" name="taskDescription"> <br>
+    <label>Priority: </label> <input type="text" #urgenciaString [(ngModel)]="addTaskNgModel.urgenciaString" name="urgenciaString"> <br>
+    <label>Date: </label> <input type="date" #taskFechaVencimiento [(ngModel)]="addTaskNgModel.taskFechaVencimiento" name="taskFechaVencimiento"> <br>
+    <input type="submit" value="Submit" id="btn">
+</form> -->
+
+<!-- COMBINED METHODS -->
+<!-- <form [formGroup]="addTaskForm" (ngSubmit)="onSubmit(); noSpaceAllowedNgModel()">
+    <label>Nombre: </label><input type="text" #taskName formControlName="taskName" [(ngModel)]="addTaskNgModel.taskName"> <br>
+    <label>Description: </label><input type="text" #taskDescription formControlName="taskDescription" [(ngModel)]="addTaskNgModel.taskDescription"> <br>
+    <label>Priority: </label> <input type="text" #urgenciaString formControlName="urgenciaString" [(ngModel)]="addTaskNgModel.urgenciaString"> <br>
+    <label>Date: </label> <input type="date" #taskFechaVencimiento formControlName="taskFechaVencimiento" [(ngModel)]="addTaskNgModel.taskFechaVencimiento"> <br>
+    <input type="submit" value="Submit" id="btn">
+</form> -->
+
+
+
+
+
+
+
+
+
+<h1>
+    <span>There&nbsp;</span>
+    <span>are&nbsp;</span>
+    <span>no&nbsp;</span>
+    <span>limits&nbsp;</span>
+    <span>to&nbsp;</span>
+    <span>what&nbsp;</span>
+    <span>you&nbsp;</span>
+    <span>can&nbsp;</span>
+    <span>accomplish,&nbsp;</span>
+    <span>except&nbsp;</span>
+    <span>the&nbsp;</span>
+    <span>limits&nbsp;</span>
+    <span>you&nbsp;</span>
+    <span>place&nbsp;</span>
+    <span>on&nbsp;</span>
+    <span>your&nbsp;</span>
+    <span>own&nbsp;</span>
+    <span>thinking.&nbsp;</span>
+  </h1>
+
+
+<div id="theOdd1sout">
+    <img src= "https://i.pinimg.com/originals/04/22/6f/04226f1fb47b0463c9ac299ef0beb1e3.png" class="rotate" alt=""/>
+</div>
+
+<div class="row">
+    <div class="col">
+        <div ngbDropdown class="d-inline-block">
+            <button type="button" class="btn btn-outline-primary" id="dropdownForm1" ngbDropdownToggle>Show</button>
+            <div ngbDropdownMenu aria-labelledby="dropdownForm1">
+                <img src= "https://i.pinimg.com/originals/04/22/6f/04226f1fb47b0463c9ac299ef0beb1e3.png" class="rotate" alt=""/>
+            </div>
+        </div>
+    </div>
+</div>

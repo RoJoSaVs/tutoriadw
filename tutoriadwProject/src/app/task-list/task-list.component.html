@@ -1,0 +1,9 @@
+<div class="container">
+    <ngb-accordion #acc="ngbAccordion">
+        <ngb-panel *ngFor="let task of taskList" id="{{task._id}}" title="{{task.nombre}}" >
+            <ng-template ngbPanelContent>
+                {{task.descripcion}}
+            </ng-template>
+        </ngb-panel>
+    </ngb-accordion>
+</div>

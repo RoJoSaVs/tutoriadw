@@ -1,0 +1,18 @@
+<div class="form">
+    <input class="form-control" type="text" placeholder="Add a task name" [(ngModel)]="newTask.nombre" />
+    <input class="form-control" type="text" placeholder="Add a task description" [(ngModel)]="newTask.descripcion" />
+    <input class="form-control" type="text" placeholder="Add a task priority" [(ngModel)]="newTask.urgenciaString" />
+    <input class="form-control" type="text" placeholder="Add a task status" [(ngModel)]="newTask.estado" />
+    <input class="form-control" type="date" placeholder="Add a task due date" [(ngModel)]="newTask.fechaVencimiento" />
+
+    <mat-form-field appearance="fill">
+        <mat-label>Choose an option</mat-label>
+        <mat-select [(ngModel)]="newTask.Lista.categoriaLista">
+            <mat-option *ngFor="let list of taskLists" value="{{list.categoriaLista}}">{{list.nombreLista}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <br>
+
+    <button mat-raised-button (click)="addTaskToDataBase()"> Add Task</button>
+</div>
